@@ -1,0 +1,137 @@
+@import './global_mixin';
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body {
+    font-family: var(--font-family) !important;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+* { box-sizing: border-box; -webkit-overflow-scrolling: touch; }
+a { text-decoration: none; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+i { font-style: italic; font-weight: var(--bold); }
+b { font-weight: var(--bold); }
+h5 { font-size: 14px; font-weight: var(--bold); }
+h4 { font-size: 16px; font-weight: var(--bold); }
+h3 { font-size: 20px; font-weight: var(--bold); }
+h2 { font-size: 24px; font-weight: var(--bold); }
+h1 { font-size: 28px; font-weight: var(--bold); }
+
+input { 
+    &.alert {
+        caret-color: rgba($color: var(--color-danger-rgb), $alpha: .5);
+        border-color: rgba($color: var(--color-danger-rgb), $alpha: .5) !important;
+        background: rgba($color: var(--color-danger-rgb), $alpha: .1) !important;
+    }
+    &:hover, &:focus {
+        border-color: var(--color-primary);
+    }
+    &:disabled {
+
+    }
+    @include transition-genr(all, .4s);
+    width: 100%;
+    outline: none;
+    padding: 10px 15px;
+    color: var(--text-color);
+    font-size: 14px !important;
+    border: 1px solid var(--color-border);
+    border-radius: $border-radius;
+}
+input[type=search], input[type=password] {
+    padding-left: 36px;
+}
+p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.btn {
+    border: 2px solid transparent;
+    border-radius: 0;
+    padding: 12px 28px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all .3s;
+    position: relative;
+    color: #FFF;
+    background-color: #333;
+    z-index: 20;
+    letter-spacing: 2px;
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+}
+
+.btn:hover {
+    color: #666;
+    background-color: #FFF;
+    border: 2px solid #666;
+    letter-spacing: 3px;
+}
+.btn:focus, .btn:hover {
+    text-decoration: none;
+}
+
+a {
+    transition: all 0.3s;
+}
+[role=button], a, area, button, input, label, select, summary, textarea {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+// *, ::after, ::before {
+//     box-sizing: inherit;
+// }
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}

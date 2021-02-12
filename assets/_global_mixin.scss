@@ -1,0 +1,49 @@
+
+$border-radius: 6px;
+$-z-index: (
+    "loader": 999999,
+    "slider_left": 99999
+);
+
+@mixin  transition-genr($prop, $duration) {
+    transition: $prop $duration cubic-bezier(.25,.8,.25,1);
+    -moz-transition: $prop $duration cubic-bezier(.25,.8,.25,1);
+    -webkit-transition: $prop $duration cubic-bezier(.25,.8,.25,1);
+    -o-transition: $prop $duration cubic-bezier(.25,.8,.25,1);
+}
+
+@mixin flex_col {
+    display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex; 
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+@mixin flex_row {
+    display: -webkit-box;  
+    display: -ms-flexbox;  
+    display: -webkit-flex; 
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+@mixin image_prop {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center,center;
+}
+
+
+@mixin seperator($side: all, $width: 1px, $lineStyle: solid, $color: var(--color-border)) {
+    @if $side == all {
+        border: $width $lineStyle #{$color};
+    } @else {
+        border-#{$side}: $width $lineStyle #{$color};
+    }
+}
+
+@mixin  zIndex($for) {
+    z-index: map-get($-z-index, $key: $for);
+}
